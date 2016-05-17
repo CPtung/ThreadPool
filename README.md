@@ -1,33 +1,31 @@
-# ThreadPool
-thread pool sample for Android
+# ThreadPool Sample (Android)
 
-/*******************************************************************************/
-/*******************************************************************************/
+#### - push task into threadpool with Runnable.
+```javascript
+ThreadPoolManager.getInstance().executeTask(new Runnable() {  
+@Override  
+public void run() {  
+//TODO:  
+}  
+});
+```
 
-// 1. push task into threadpool with finishing callback.
 
-TaskBuilder taskbuilder = new TaskBuilder(new TaskCallback() {
-	@Override
-	public void onTaskFinished(Object object) {
-		//TODO:
-	}
-}) {
-	@Override
-	public Object ToDo() {
-		//TODO:
-	}
+#### - push task into threadpool with Callback.
+
+
+```javascript
+TaskBuilder taskbuilder = new TaskBuilder(new TaskCallback() {  
+@Override  
+public void onTaskFinished(Object object) {  
+//TODO:  
+}  
+}) {  
+@Override  
+public Object ToDo() {  
+//TODO:  
+}  
 };
 ThreadPoolManager.getInstance().executeTaskWithCallback(taskbuilder);
+```
 
-/*******************************************************************************/
-
-// 2. push task into threadpool with regular Rannable format.
-ThreadPoolManager.getInstance().executeTask(new Runnable() {
-	@Override
-	public void run() {
-		//TODO:
-	}
-});
-
-/*******************************************************************************/
-/*******************************************************************************/
